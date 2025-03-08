@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef's Delivery</title>
+    <!-- Importando a biblioteca Phaser -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.0/dist/phaser.min.js"></script>
+    <style>
+        /* Estilo básico para o corpo e o canvas */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Importando as cenas do jogo -->
+    <script src="cenas/Welcome.js"></script>
+    <script src="cenas/Kitchen.js"></script>
+
+    <script>
+        // Configuração do jogo
+        const config = {
+            type: Phaser.AUTO, // Escolhe automaticamente WebGL ou Canvas
+            width: 800, // Largura do jogo
+            height: 600, // Altura do jogo
+            scene: [Welcome, Kitchen], // Cenas do jogo
+            physics: {
+                default: 'arcade', // Sistema de física padrão
+                arcade: {
+                    gravity: { y: 300 }, // Configuração da gravidade
+                    debug: false // Desativa o modo de depuração
+                }
+            }
+        };
+
+        // Inicializando o jogo
+        const game = new Phaser.Game(config); // Cria um novo jogo Phaser com a configuração
+    </script>
+</body>
+</html>
