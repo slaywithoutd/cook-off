@@ -31,8 +31,13 @@
         // Configuração do jogo
         const config = {
             type: Phaser.AUTO, // Escolhe automaticamente WebGL ou Canvas
-            width: 800, // Largura do jogo
-            height: 600, // Altura do jogo
+            scale: {
+                mode: Phaser.Scale.FIT,
+                autoCenter: Phaser.Scale.CENTER_BOTH,
+                parent: 'game',
+                width: 800,
+                height: 600
+            },
             scene: [Welcome, Kitchen], // Cenas do jogo
             physics: {
                 default: 'arcade', // Sistema de física padrão
